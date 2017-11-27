@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #f2f2f2;
+}
+.wrap{
+	position: relative;
+	left: 50px;
+	top:100px
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+
+
+/* 主导航 */
+.wrap .nav ul{
+	background: #6e6568;
+	padding: 15px 0 ;	
+	float: left;
+	width: 200px;
+}
+.wrap .nav ul li{
+	padding: 0 20px;
+	height: 30px;
+	line-height: 30px;
+}
+.wrap .nav ul li:hover{
+	background: #999395;
+}
+.wrap .nav ul li a{
+	color:#fff;
+	font-size: 14px;
+
+}
+.wrap .nav ul .active a{
+color:#c81623;
+}
+ .none{
+	display: none;
+} 
+
+
+/* 子导航 */
+.sub{
+	width: 800px;
+	position: absolute;
+	top: 0;
+	left: 200px;
+	box-sizing: border-box;
+	box-shadow: 2px 0 5px rgba(0,0,0,.3);
+}
+.sub .sub-content{
+	
+	padding: 20px;
+	background: #fff;
+}
+.sub ul{
+	overflow: hidden;
+	margin: 5px 0 ;
+}
+.sub ul li{
+	float: left;
+	margin-right: 10px;
+	background: #6e6568;
+	font-size: 12px;
+	padding: 3px 8px;
+}
+.sub ul li a {
+	color:#fff;
+}
+.sub ul li a span{
+	margin-left: 5px;
+}
+
+.sub dl{
+	display: inline-block;
+	font-size: 12px;
+}
+
+
+.sub dl dt,
+.sub dl dd{
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	padding: 8px 0;
+}
+/* 表格头部 */
+.sub dl dt{
+	font-weight: bold;
+	margin-right: 8px;
+}
+.sub dl dt span{
+	margin-left: 5px;
+}
+/* 表格内容 */
+.sub dl dd{
+	border-bottom: 1px #ddd solid;
+	
+}
+.sub dl dd a{
+	display: block;
+	padding: 0 8px;
+	border-left: 1px #ddd solid;
+}
