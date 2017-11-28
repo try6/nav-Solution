@@ -10,16 +10,17 @@
 
 //位运算，判断两个数符号是否相同
 function sameSign(a, b) {
-	//二进制正负表示在最高位，使用'^'运算
+	//二进制正负表示在最高位，使用'^'运算,有一个为1则返回true
 	return (a ^ b) >= 0
 }
 //向量计算函数
 function vector(a, b) {
 	//传入两个点，返回这两个点构成的向量
-	//
-	return {
-		x: b.x - a.x,
-		y: b.y - a.y
+	if(a && b){
+		return {
+			x: b.x - a.x,
+			y: b.y - a.y
+		}
 	}
 }
 /*向量叉乘公式*/
@@ -41,6 +42,7 @@ function isPointInTrangle(p, a, b, c) {
 	var t3 = vectorProduct(pb, pc);
 
 	//判断叉乘结果正负
+	//console.log(t1,t2,t3);
 	return sameSign(t1, t2) && sameSign(t2, t3);
 }
 
@@ -49,14 +51,14 @@ function isPointInTrangle(p, a, b, c) {
 function needDelay(elem, leftCorner, currMousePos) {
 	var offset = elem.offset();
 	var topLeft = {
-		x: offset.left,
-		y: offset.top
+		x: offset.left+$(".nav ul").width()+50,
+		y: offset.top+100
 	}
 	var bottonLeft = {
-		x: offset.left,
-		y: offset.top + elem.height()
+		x: topLeft.x,
+		y: topLeft.y + elem.height()
 	}
-
+	//console.log(currMousePos, leftCorner);
 	return isPointInTrangle(currMousePos, leftCorner, topLeft, bottonLeft);
 
 }
