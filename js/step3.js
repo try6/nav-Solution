@@ -69,8 +69,9 @@ $(function () {
 
         /*判断是否需要延时*/
         var delay = needDelay(subNav, leftCorner, currMousePos);
-
+        var text = document.getElementById("text")
         if (delay) {
+            text.innerHTML = "needDelay";
             console.log('needDelay!');
             time1 = setTimeout(function () {
                 if (mouseInSub) {
@@ -88,7 +89,8 @@ $(function () {
             }, 500);
         } else {
             time2 = setTimeout(function () {
-                console.log("don't needDelay!");
+                
+                text.innerHTML = "don't needDelay!";
                 $(".sub-content").addClass("none");
                 subNav.removeClass("none");
                 setTimeout(function () {
